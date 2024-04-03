@@ -12,11 +12,11 @@ export default function Header() {
         <HiOutlineMagnifyingGlass />
         <input
           type="search"
-          className="bg-transparent px-2 outline-none"
+          className="bg-transparent dark:bg-cyan-500 px-2 outline-none"
           placeholder="Search Games"
         />
       </div>
-      <div>
+      <div className="cursor-pointer" onClick={() => setToggle(!toggle)}>
         {toggle ? (
           <HiMoon className="bg-slate-200 p-1 rounded-full text-[30px] text-black" />
         ) : (
