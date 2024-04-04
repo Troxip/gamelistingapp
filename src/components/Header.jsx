@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useContext } from "react";
 import logo from "./../assets/images/logo.png";
 import { HiMoon, HiOutlineMagnifyingGlass, HiSun } from "react-icons/hi2";
+import { ThemeContext } from "../context/ThemeContext";
 
 export default function Header() {
-  const [toggle, setToggle] = useState(true);
+  const { theme, setTheme } = useContext(ThemeContext);
 
   return (
     <div className="flex items-center p-3">
@@ -16,11 +17,17 @@ export default function Header() {
           placeholder="Search Games"
         />
       </div>
-      <div className="cursor-pointer" onClick={() => setToggle(!toggle)}>
-        {toggle ? (
-          <HiMoon className="bg-slate-200 p-1 rounded-full text-[30px] text-black" />
+      <div className="cursor-pointer">
+        {theme === "light" ? (
+          <HiMoon
+            className="bg-slate-200 p-1 rounded-full text-[30px] text-black"
+            onClick={() => setTheme("dark")}
+          />
         ) : (
-          <HiSun className="bg-slate-200 p-1 rounded-full text-[30px] text-black" />
+          <HiSun
+            className="bg-slate-200 p-1 rounded-full text-[30px] text-black"
+            onClick={() => setTheme("light")}
+          />
         )}
       </div>
     </div>
