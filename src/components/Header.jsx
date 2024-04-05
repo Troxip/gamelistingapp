@@ -21,12 +21,18 @@ export default function Header() {
         {theme === "light" ? (
           <HiMoon
             className="bg-slate-200 p-1 rounded-full text-[30px] text-black"
-            onClick={() => setTheme("dark")}
+            onClick={() => {
+              setTheme("dark");
+              localStorage.setItem("theme", "dark");
+            }}
           />
         ) : (
           <HiSun
             className="bg-slate-200 p-1 rounded-full text-[30px] text-black"
-            onClick={() => setTheme("light")}
+            onClick={() => {
+              setTheme("light");
+              localStorage.setItem("theme", "light");
+            }}
           />
         )}
       </div>
