@@ -1,3 +1,5 @@
+import GamesByGenreId from "./GamesByGenreId";
+
 export default function TrendingGames({ allGames }) {
   console.log(allGames);
   return (
@@ -25,6 +27,7 @@ export default function TrendingGames({ allGames }) {
             )
         )}
       </div>
+      <GamesByGenreId gameList={allGames} />
     </>
   );
 }
