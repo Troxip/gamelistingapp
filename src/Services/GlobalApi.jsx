@@ -8,3 +8,6 @@ const axiosCreate = axios.create({
 export const getGenreList = () => {
   return axiosCreate.get("/genres?key=" + key);
 };
+export const getAllGames = () => {
+  return axiosCreate.get("/games?key=" + key);
+};
