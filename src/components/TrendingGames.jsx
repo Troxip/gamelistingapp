@@ -2,14 +2,17 @@ export default function TrendingGames({ allGames }) {
   console.log(allGames);
   return (
     <>
-      <h1 className="mt-4 font-bold text-[30px] dark:text-white dark: white">
+      <h1 className="md:block hidden mt-4 font-bold text-[30px] dark:text-white dark: white">
         Trending Games
       </h1>
-      <div className="gap-2 hidden md:grid md:grid-cols-3 lg:grid-cols-4 mt-4">
+      <div className="gap-3 hidden md:grid md:grid-cols-3 lg:grid-cols-4 mt-4">
         {allGames.map(
           (game, index) =>
             index < 4 && (
-              <div key={game.id}>
+              <div
+                key={game.id}
+                className="hover:scale-105 transition-all duration-300 cursor-pointer ease-in-out"
+              >
                 <img
                   src={game.background_image}
                   alt={`${game.name} image`}
